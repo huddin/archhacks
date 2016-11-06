@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var MySchema = {
 	time : { type : Date, default: Date.now },
-	sound: Number
+	soundVal: Number
 }
 
 var sound = mongoose.model('sound', MySchema);
