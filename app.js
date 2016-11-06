@@ -32,7 +32,7 @@ mongoose.connect('mongodb://localhost/myapp');
 /*--------- Data Recorders-------*/
 
 
-app.get('/pressure', function(req, res){
+app.post('/pressure', function(req, res){
 
 	/*
 	var tmp = myUser({
@@ -47,7 +47,9 @@ app.get('/pressure', function(req, res){
 		}
 	});
 	*/
-	res.send(req.headers.pressure);
+	console.log(req.headers.pressure);
+	res.status(200).send();
+	//res.send(req.headers.pressure);
 });
 /*
 var tagline = "EJS IS WORKING NOW"
