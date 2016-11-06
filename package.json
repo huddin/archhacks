@@ -1,0 +1,21 @@
+{
+  "name": "arch",
+  "version": "1.0.0",
+  "description": "basic_app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Haris",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.11",
+    "mongoose": "^4.6.6",
+    "node-persist": "^2.0.7",
+    "plotly": "^1.0.6"
+  }
+}
