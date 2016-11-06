@@ -53,7 +53,7 @@ app.post('/abc', function(req, res){
 });
 
 app.post('/pressure', function(req, res){
-	console.log("/****************** arch ***********/" + req.header.mlh);
+	console.log("/****************** arch ***********/" + req.headers.mlh);
 	res.status(200).send();
 });
 
