@@ -73,9 +73,9 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Notification <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="https://archhacks.herokuapp.com/temperature">Temperature</a></li>
-								<li><a href="https://archhacks.herokuapp.com/beats">Pulse</a></li>
-								<li><a href="https://archhacks.herokuapp.com/sound">Cough</a></li>
+								<li  onclick="tempD()"><a href="https://archhacks.herokuapp.com/temperature">Temperature</a></li>
+								<li  onclick="beatD()"><a href="https://archhacks.herokuapp.com/beats">Pulse</a></li>
+								<li  onclick="soundD()"><a href="https://archhacks.herokuapp.com/sound">Cough</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -87,7 +87,8 @@
 	<div style="margin:50px">
 		<!--for demo wrap-->
 		<h1><%= headName %></h1>
-		<div class="tbl-header">
+
+		<div id ="tempH" class="tbl-header" style="display:none">
 			<table cellpadding="0" cellspacing="0" border="0">
 				<thead>
 					<tr>
@@ -97,21 +98,86 @@
 				</thead>
 			</table>
 		</div>
-		<div class="tbl-content">
+		<div id ="tempB" class="tbl-content" style="display:none">
 			<table cellpadding="0" cellspacing="0" border="0">
 				<tbody>
 					<tr>
-						<td>75</td>
-						<td>2008-05-09</td>
+						<td>38.64</td>
+						<td>2016-11-06 15:28:57</td>
 					</tr>
 					<tr>
-						<td>95</td>
-						<td>2008-05-07</td>
+						<td>36.93</td>
+						<td>2016-11-06 15:28:59</td>
+					</tr>
+					<tr>
+						<td>36.89</td>
+						<td>2016-11-06 15:31:05</td>
+					</tr>
+					<tr>
+						<td>37.06</td>
+						<td>2016-11-06 15:31:20</td>
+					</tr>
+					<tr>
+						<td>38.71</td>
+						<td>2016-11-06 15:32:22</td>
+					</tr>
+					<tr>
+						<td>38.07</td>
+						<td>2016-11-06 15:32:25</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+
+		<div id ="beatH" class="tbl-header" style="display:none">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<thead>
+					<tr>
+						<th>Pulse</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div id ="beatB" class="tbl-content" style="display:none">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<tbody>
+					<tr>
+						<td>140</td>
+						<td>2016-11-06 15:40:35</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+		<div id ="soundH" class="tbl-header" style="display:none">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<thead>
+					<tr>
+						<th>Decibels</th>
+						<th>Date</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div id ="soundB" class="tbl-content" style="display:none">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<tbody>
+					<tr>
+						<td>5500</td>
+						<td>2016-11-06 15:35:43</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+
+
 	</div>
+
+
 		<div class="jumbotron">
 			<div id="graphdiv"></div>
 		</div>
@@ -125,6 +191,8 @@
 Plotly.newPlot('graphdiv', data);
 
      </script>
+
+     <script type="text/javascript" src="disp.js"></script>
 <!--
 	<script type="text/javascript">
 

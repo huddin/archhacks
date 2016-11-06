@@ -70,7 +70,7 @@ app.post('/recbeat', function(req, res){
 app.post('/recsound', function(req, res){
 
 	var tmp = sound({
-	  soundVal: req.headers.mlh
+		soundVal: req.headers.mlh
 	});
 
 	tmp.save(function(err){
@@ -88,6 +88,24 @@ app.post('/pressure', function(req, res){
 	console.log("hello");
 	//console.log("/****************** arch ***********/" + req.headers.mlh);
 	res.status(200).send();
+});
+
+app.get('/remtemp',function(req, res){
+	temp.remove({}, function(err) { 
+		console.log('temperature collection removed') 
+	});
+});
+
+app.get('/rembeat',function(req, res){
+	beat.remove({}, function(err) { 
+		console.log('beat collection removed') 
+	});
+});
+
+app.get('/remsound',function(req, res){
+	sound.remove({}, function(err) { 
+		console.log('sound collection removed') 
+	});
 });
 
 /*--------- Show Data-------*/
