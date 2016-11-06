@@ -20,7 +20,7 @@ var myVar = [
 ];
 
 app.get('/hello', function(req, res){
-	var tagline = req;
+	var tagline = req.body.param;
 	res.render('./index', {
 		myVar: myVar,
 		tagline: tagline
