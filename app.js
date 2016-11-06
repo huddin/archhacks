@@ -16,6 +16,7 @@ var plotly = require('plotly')('huddin', 'ry5m4i6wz7');
 
 bodyParser.urlencoded({ extended: true })
 //app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
@@ -175,11 +176,11 @@ app.get('/temperature', function(req, res){
 	temp.find({},projections, function(err, users) {
 		if (err) throw err;
 
-		console.log(users);
+		//console.log(users);
 
 		temp.find({}, projections2, function(err, name){
 			if (err) throw err;
-			console.log(name);
+			//console.log(name);
 			res.render('./main', {
 				myVar: [
 				{
@@ -221,11 +222,11 @@ app.get('/beats', function(req, res){
 	beat.find({},projections, function(err, users) {
 		if (err) throw err;
 
-		console.log(users);
+		//console.log(users);
 
 		beat.find({}, projections2, function(err, name){
 			if (err) throw err;
-			console.log(name);
+			//console.log(name);
 			res.render('./main', {
 				myVar: [
 				{
@@ -266,11 +267,11 @@ app.get('/sound', function(req, res){
 	sound.find({},projections, function(err, users) {
 		if (err) throw err;
 
-		console.log(users);
+		//console.log(users);
 
 		sound.find({}, projections2, function(err, name){
 			if (err) throw err;
-			console.log(name);
+			//console.log(name);
 			res.render('./main', {
 				myVar: [
 				{
