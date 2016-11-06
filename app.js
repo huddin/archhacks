@@ -23,7 +23,7 @@ var middleware = require('./middleware.js');
 app.use(middleware.requireAuthentication);
 app.use(middleware.logger);
 
-mongoose.connect('mongodb://localhost/myapp');
+mongoose.connect('mongodb://abc:123@jello.modulusmongo.net:27017/Vajoro4n');
 
 
 
