@@ -91,6 +91,51 @@ app.post('/pressure', function(req, res){
 });
 
 /*--------- Show Data-------*/
+app.get('/', function(req, res){
+
+	var projections = {
+		_id:false,
+		__v:false,
+		time:false
+
+	};
+
+	var projections2 = {
+		_id:false,
+		__v:false,
+		temperature:false
+
+	};
+	
+	
+
+	temp.find({},projections, function(err, users) {
+		if (err) throw err;
+
+		console.log(users);
+
+		temp.find({}, projections2, function(err, name){
+			if (err) throw err;
+			console.log(name);
+			res.render('./main', {
+				myVar: [
+				{
+					x: name.map(function(xyz){
+						return xyz.time;
+					}),
+					y: users.map(function(xyz){
+						return xyz.temperature;
+					}),
+					type: 'scatter'
+				}
+				],
+				headName: 'Temperature'
+			});
+		});
+
+	});
+
+});
 app.get('/temperature', function(req, res){
 
 	var projections = {
