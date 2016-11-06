@@ -26,6 +26,8 @@
 	<script type="text/javascript" src="dygraph-combined-dev.js"></script>
 	<script type="text/javascript"	src="tablejs.js"></script>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
 </head>
 <body>
 
@@ -73,9 +75,12 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Notification <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li  onclick="tempD()"><a href="https://archhacks.herokuapp.com/temperature">Temperature</a></li>
+<!-- 								<li  onclick="tempD()"><a href="https://archhacks.herokuapp.com/temperature">Temperature</a></li>
 								<li  onclick="beatD()"><a href="https://archhacks.herokuapp.com/beats">Pulse</a></li>
-								<li  onclick="soundD()"><a href="https://archhacks.herokuapp.com/sound">Cough</a></li>
+								<li  onclick="soundD()"><a href="https://archhacks.herokuapp.com/sound">Cough</a></li> -->
+								<li  onclick="tempD()"><a href="http://localhost:3000/temperature">Temperature</a></li>
+								<li  onclick="beatD()"><a href="http://localhost:3000/beats">Pulse</a></li>
+								<li  onclick="soundD()"><a href="http://localhost:3000/sound">Cough</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -88,7 +93,7 @@
 		<!--for demo wrap-->
 		<h1><%= headName %></h1>
 
-		<div id ="tempH" class="tbl-header" style="display:none">
+		<div id ="tempH" class="tbl-header" style="display:block">
 			<table cellpadding="0" cellspacing="0" border="0">
 				<thead>
 					<tr>
@@ -98,7 +103,7 @@
 				</thead>
 			</table>
 		</div>
-		<div id ="tempB" class="tbl-content" style="display:none">
+		<div id ="tempB" class="tbl-content" style="display:block">
 			<table cellpadding="0" cellspacing="0" border="0">
 				<tbody>
 					<tr>
@@ -129,7 +134,7 @@
 			</table>
 		</div>
 
-		<div id ="beatH" class="tbl-header" style="display:none">
+		<div id ="beatH" class="tbl-header" style="display:block">
 			<table cellpadding="0" cellspacing="0" border="0">
 				<thead>
 					<tr>
@@ -139,7 +144,7 @@
 				</thead>
 			</table>
 		</div>
-		<div id ="beatB" class="tbl-content" style="display:none">
+		<div id ="beatB" class="tbl-content" style="display:block">
 			<table cellpadding="0" cellspacing="0" border="0">
 				<tbody>
 					<tr>
@@ -151,7 +156,7 @@
 		</div>
 
 
-		<div id ="soundH" class="tbl-header" style="display:none">
+		<div id ="soundH" class="tbl-header" style="display:block">
 			<table cellpadding="0" cellspacing="0" border="0">
 				<thead>
 					<tr>
@@ -161,7 +166,7 @@
 				</thead>
 			</table>
 		</div>
-		<div id ="soundB" class="tbl-content" style="display:none">
+		<div id ="soundB" class="tbl-content" style="display:block">
 			<table cellpadding="0" cellspacing="0" border="0">
 				<tbody>
 					<tr>
@@ -192,7 +197,7 @@ Plotly.newPlot('graphdiv', data);
 
      </script>
 
-     <script type="text/javascript" src="disp.js"></script>
+<script type="text/javascript" src="disp.js"></script>
 <!--
 	<script type="text/javascript">
 
