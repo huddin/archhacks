@@ -8,7 +8,7 @@ var plotly = require('plotly')('huddin', 'ry5m4i6wz7');
 bodyParser.urlencoded({ extended: true })
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
-
+/*
 var tagline = "EJS IS WORKING NOW"
 var myVar = [
   {
@@ -25,6 +25,13 @@ app.get('/hello', function(req, res){
 		tagline: tagline
 	});
 });
+*/
+
+app.post('/pressure', function(req, res){
+	console.log(req);
+	res.status(200).send();
+});
+
 
 /*
 var middleware = require('./middleware.js');
